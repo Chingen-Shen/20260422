@@ -56,9 +56,13 @@
             </div>
             <button class="btn" style="padding: 0.5rem 1rem; font-size: 1rem;" onclick="expressGratitude()">誠心感恩 (+1 功德)</button>
             
-            <h4>抽籤歷史紀錄</h4>
-            <div class="history-list" id="history-list">
-                <p style="text-align: center;">尚未有紀錄</p>
+            <hr style="margin: 2rem 0; opacity: 0.2;">
+            
+            <div id="history-section">
+                <button class="btn" style="padding: 0.5rem 1rem; font-size: 1rem; background: var(--temple-wood);" onclick="fetchHistoryByName()">查看我的抽籤紀錄</button>
+                <div class="history-list" id="history-list" style="display: none; margin-top: 1rem;">
+                    <p style="text-align: center;">請輸入姓名後點擊查看</p>
+                </div>
             </div>
         </section>
     </div>

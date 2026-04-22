@@ -116,27 +116,38 @@ async function expressGratitude() {
     alert(data.message);
 }
 
-async function updateMeritBook() {
-    // 更新歷史
-    const hResp = await fetch('/api/history');
-    const history = await hResp.json();
+async function fetchHistoryByName() {
+    const name = document.getElementById('user-name').value;
+    if (!name) {
+        alert("請輸入姓名以查詢您的專屬紀錄。");
+        return;
+    }
+    
     const list = document.getElementById('history-list');
+    list.style.display = 'block';
+    list.innerHTML = '<p style="text-align: center;">查詢中...</p>';
+    
+    const response = await fetch(`/api/history?name=${encodeURIComponent(name)}`);
+    const history = await response.json();
     
     if (history.length === 0) {
-        list.innerHTML = '<p style="text-align: center;">尚未有紀錄</p>';
+        list.innerHTML = '<p style="text-align: center;">尚未有您的專屬紀錄</p>';
     } else {
         list.innerHTML = history.map(h => `
             <div class="history-item">
                 <strong>${h.timestamp}</strong> - [${h.category}] 抽得第 ${h.poem_id} 籤
+                <br><small>信眾：${h.user_name}</small>
             </div>
         `).join('');
     }
-    
-    // 更新功德 (雖然 API 可以一次給，但這裡簡單呼叫一次感恩來刷新)
+}
+
+async function updateMeritBook() {
+    // 僅更新功德與稱號，不再自動載入歷史清單以維護隱私
     const mResp = await fetch('/api/gratitude', { 
         method: 'POST', 
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ comment: "系統刷新" }) 
+        body: JSON.stringify({ comment: "系統刷新", refresh: true }) 
     });
     const mData = await mResp.json();
     document.getElementById('merit-points').innerText = mData.total_merit;
