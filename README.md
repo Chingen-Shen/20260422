@@ -55,7 +55,9 @@
 在 `screenshots/` 資料夾放入以下截圖：
 
 - `ritual.png`：系統抽籤主畫面與動畫
-- `history.png`：個人功德簿與歷史紀錄畫面
+  ![ritual.png](screenshots/ritual.png)
+- `history.png`：個人功德簿與歷史紀錄畫面 部分
+  ![history.png](screenshots/history.png)
 
 ### 5. 心得報告（本 README.md 下方）
 
