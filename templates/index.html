@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上宮廟抽籤平台 | 誠心求籤，積德感恩</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>線上宮廟抽籤系統</h1>
+            <p>【 誠心求籤 ‧ 隨緣自在 】</p>
+        </header>
+
+        <main class="ritual-section" id="app">
+            <div id="step-pray">
+                <h2>參拜祈福</h2>
+                <p>請先靜心，向神明稟告您的姓名、生辰、住址與所求之事。</p>
+                <input type="text" id="user-name" placeholder="信士/信女姓名" class="btn" style="background: white; color: black; margin-bottom: 10px;">
+                <select id="category" class="btn" style="background: white; color: black; width: 100%;">
+                    <option value="運勢">求問：整體運勢</option>
+                    <option value="感情">求問：感情婚姻</option>
+                    <option value="事業">求問：事業功名</option>
+                    <option value="健康">求問：身體健康</option>
+                    <option value="財運">求問：求財利潤</option>
+                </select>
+                <button class="btn" onclick="startRitual()">點火上香</button>
+            </div>
+
+            <div id="step-jiaobei" style="display: none;">
+                <h2>擲筊請示</h2>
+                <p>請示神明是否願意賜籤...</p>
+                <div class="jiaobei-container">
+                    <div class="jiaobei" id="jb1"></div>
+                    <div class="jiaobei" id="jb2"></div>
+                </div>
+                <p id="jiaobei-result"></p>
+                <button class="btn" id="btn-cast" onclick="castJiaobei()">擲筊</button>
+                <button class="btn" id="btn-next" style="display: none;" onclick="drawPoem()">進入抽籤</button>
+            </div>
+
+            <div id="step-poem" style="display: none;">
+                <div id="poem-display"></div>
+                <button class="btn" onclick="confirmPoem()">感謝神明指引 (存入功德簿)</button>
+            </div>
+        </main>
+
+        <section class="merit-book">
+            <h3>個人功德簿</h3>
+            <div id="merit-status">
+                <p>目前功德：<span id="merit-points">0</span> | 稱號：<span id="merit-rank">載入中...</span></p>
+            </div>
+            <button class="btn" style="padding: 0.5rem 1rem; font-size: 1rem;" onclick="expressGratitude()">誠心感恩 (+1 功德)</button>
+            
+            <h4>抽籤歷史紀錄</h4>
+            <div class="history-list" id="history-list">
+                <p style="text-align: center;">尚未有紀錄</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

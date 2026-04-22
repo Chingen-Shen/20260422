@@ -1,0 +1,146 @@
+:root {
+    --temple-red: #8B0000;
+    --temple-gold: #FFD700;
+    --temple-dark: #2C1A1A;
+    --temple-paper: #FDF5E6;
+    --temple-wood: #4A2B2B;
+    --transition-speed: 0.5s;
+}
+
+body {
+    background-color: var(--temple-dark);
+    color: var(--temple-paper);
+    font-family: 'Noto Serif TC', serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: linear-gradient(135deg, var(--temple-wood) 0%, var(--temple-dark) 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid var(--temple-gold);
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    color: var(--temple-gold);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.ritual-section {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn {
+    background-color: var(--temple-red);
+    color: var(--temple-gold);
+    border: 1px solid var(--temple-gold);
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn:hover {
+    background-color: var(--temple-gold);
+    color: var(--temple-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not_allowed;
+}
+
+.poem-card {
+    background-color: var(--temple-paper);
+    color: var(--temple-dark);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 4px double var(--temple-red);
+    margin-top: 1rem;
+    animation: fadeIn 1s ease;
+}
+
+.poem-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--temple-red);
+    margin-bottom: 1rem;
+}
+
+.merit-book {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.history-list {
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.2);
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.history-item {
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 0.5rem 0;
+}
+
+.jiaobei-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.jiaobei {
+    width: 60px;
+    height: 30px;
+    background-color: var(--temple-red);
+    border-radius: 30px 30px 0 0;
+    border: 2px solid var(--temple-gold);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.jiaobei.flip {
+    transform: rotateX(180deg);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 捲軸樣式 */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--temple-gold);
+    border-radius: 10px;
+}
