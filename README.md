@@ -55,9 +55,16 @@
 在 `screenshots/` 資料夾放入以下截圖：
 
 - `ritual.png`：系統抽籤主畫面與動畫
-  ![ritual.png](screenshots/ritual.png)
+ <img width="1920" height="1080" alt="螢幕擷取畫面 (6)" src="https://github.com/user-attachments/assets/4f75edcb-3988-4210-914a-981b201b5bd4" />
+<img width="1920" height="1080" alt="螢幕擷取畫面 (5)" src="https://github.com/user-attachments/assets/ced58e36-abfd-46dc-99a8-450b6820e97b" />
+<img width="1920" height="1080" alt="螢幕擷取畫面 (4)" src="https://github.com/user-attachments/assets/ae647fa7-5252-40ab-8887-c17163fcb15b" />
+<img width="1920" height="1080" alt="螢幕擷取畫面 (2)" src="https://github.com/user-attachments/assets/7a7c6c2b-ad33-4b0b-ac61-559d96161bc7" />
+<img width="1920" height="1080" alt="螢幕擷取畫面 (1)" src="https://github.com/user-attachments/assets/48e24dff-563b-42cd-9812-bd86972a12cd" />
+
 - `history.png`：個人功德簿與歷史紀錄畫面 部分
-  ![history.png](screenshots/history.png)
+ <img width="1920" height="1080" alt="螢幕擷取畫面 (3)" src="https://github.com/user-attachments/assets/69152c7c-9b3e-4f2c-9770-737cacacda97" />
+<img width="1920" height="1080" alt="螢幕擷取畫面 (7)" src="https://github.com/user-attachments/assets/1ab3e94d-6a9f-4761-b63b-7601c7bcc236" />
+
 
 ### 5. 心得報告（本 README.md 下方）
 
@@ -107,3 +114,7 @@ python app.py
 **Q3. 把「感恩功德系統」從金錢改為「誠心記數」的設計，對使用者體驗有什麼影響？**
 
 > 將「宗教信仰」與「現代互動」結合，減少商業氣息，增加儀式感與趣味性。使用者透過「誠心感恩」來累積功德等級（如大德、居士），更符合線上體驗的輕量化需求，也讓系統更具備社交分享與自我激勵的正面價值。
+
+**心得**
+
+> 這次課程我更深刻了解antigravity的運作模式，他在執行的每一個步驟我都有參與到，不同以往連他為什麼卡住都不知道。今天我能夠清楚認知他在做哪一個SKILL，在做甚麼規劃什麼，也能夠介入他生成的文件進行我想要的修改，整體非常有參與感!
